@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>Bandwise — Resistor color challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="." aria-label="Bandwise home"><span class="brand-mark">⌁</span> bandwise</a>
+        <div class="top-note"><span class="live-dot"></span> Learn by doing</div>
+      </header>
+
+      <section id="start-screen" class="screen start-screen">
+        <div class="intro-copy">
+          <p class="eyebrow">ELECTRONICS • QUICK QUIZ</p>
+          <h1>Read the bands.<br /><em>Know the value.</em></h1>
+          <p class="lede">Decode resistor colors at a glance. Identify the value, build your streak, and become faster with every round.</p>
+          <button id="start-button" class="button primary-button">Start challenge <span>→</span></button>
+        </div>
+        <div class="intro-card">
+          <div class="card-label">THE BASICS</div>
+          <div class="mini-resistor" aria-hidden="true"><i></i><b></b><i></i><i></i><i></i><span></span><span></span></div>
+          <div class="color-key"><span class="key-swatch brown"></span><span>1st digit</span><span class="key-swatch red"></span><span>2nd digit</span><span class="key-swatch orange"></span><span>multiplier</span></div>
+          <div class="card-footer">3 to 6 bands · 10 rounds</div>
+        </div>
+      </section>
+
+      <section id="game-screen" class="screen game-screen hidden">
+        <div class="game-header">
+          <div><p class="eyebrow">RESISTOR CHALLENGE</p><h2>What’s the value?</h2></div>
+          <div class="score-chip"><span>Score</span><strong id="score">0</strong></div>
+        </div>
+        <div class="progress-row"><span id="round-label">ROUND 01 / 10</span><div class="progress-track"><div id="progress-bar"></div></div><span id="streak-label">STREAK 0</span></div>
+
+        <div class="resistor-panel">
+          <div class="band-count"><span id="band-count">4</span> bands <small id="band-hint">• first two are digits</small></div>
+          <div class="resistor-stage" aria-label="Resistor with colored bands" role="img">
+            <div class="lead left-lead"></div><div class="resistor-body"><div class="resistor-cap left-cap"></div><div id="bands" class="bands"></div><div class="resistor-cap right-cap"></div></div><div class="lead right-lead"></div>
+          </div>
+          <div id="band-legend" class="band-legend"></div>
+        </div>
+
+        <form id="answer-form" class="answer-area">
+          <label for="answer">Your answer</label>
+          <div class="answer-input-wrap"><input id="answer" autocomplete="off" inputmode="decimal" placeholder="e.g. 4.7" /><select id="unit" aria-label="Resistance unit"><option value="1">Ω — ohm</option><option value="0.001">mΩ — milliohm</option><option value="1000">kΩ — kiloohm</option><option value="1000000">MΩ — megaohm</option></select></div>
+          <p class="helper">Choose a unit, then enter the resistance value.</p>
+          <button id="check-button" class="button primary-button full-button" type="submit">Check answer <span>↵</span></button>
+        </form>
+        <div id="feedback" class="feedback hidden" role="status"></div>
+      </section>
+
+      <section id="result-screen" class="screen result-screen hidden">
+        <p class="eyebrow">CHALLENGE COMPLETE</p>
+        <h1 id="result-title">Nice work.</h1>
+        <p class="result-subtitle">You made it through all ten resistors.</p>
+        <div class="result-score"><span id="final-score">0</span><small> / 10 correct</small></div>
+        <div class="result-stats"><div><strong id="accuracy">0%</strong><span>accuracy</span></div><div><strong id="best-streak">0</strong><span>best streak</span></div><div><strong id="total-bands">0</strong><span>bands read</span></div></div>
+        <button id="again-button" class="button primary-button">Play again <span>↗</span></button>
+      </section>
+
+      <footer class="footer"><span>Bandwise / resistor color code trainer</span><span>Made for curious minds</span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
