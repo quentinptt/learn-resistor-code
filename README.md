@@ -1,5 +1,7 @@
 # Learn Resistor Code
 
+![Screen of the web app](./asset.png)
+
 A quick browser quiz for learning to read resistor color codes. Learn Resistor Code shows a randomly generated resistor with 3 to 6 color bands and asks you to identify its resistance value, tracking your score and streak across 10 rounds.
 
 ## Play
